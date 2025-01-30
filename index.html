@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="form-section">
+            <h1>Kalkulator BMI</h1>
+            <p>Body Mass Index (BMI) adalah indikator yang digunakan untuk menentukan apakah berat badan seseorang berada dalam kisaran yang sehat berdasarkan tinggi badannya. Kalkulator BMI ini dirancang untuk membantu Anda memahami status berat badan dan risiko kesehatan yang terkait. Dengan mengetahui BMI, Anda dapat mengambil langkah yang tepat untuk menjaga kesehatan tubuh. Hasil perhitungan ini dapat menjadi panduan awal, tetapi konsultasi dengan tenaga medis profesional tetap diperlukan untuk evaluasi yang lebih akurat.</p>
+            <form id="bmiForm">
+                <table>
+                    <tr>
+                        <td rowspan="4" class="image-cell">
+                            <div class="image-section">
+                                <img id="image" src="images/pria.png" alt="Gambar Pria" class="gender-image">
+                            </div>
+                        </td>
+                        <td><label>Jenis Kelamin:</label></td>
+                        <td>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="pria" checked>
+                                <label for="male">Pria</label>
+                                <input type="radio" id="female" name="gender" value="wanita">
+                                <label for="female">Wanita</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="weight">Berat Badan (kg):</label></td>
+                        <td><input type="number" id="weight" placeholder="Masukkan berat badan" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Usia (tahun):</label></td>
+                        <td><input type="number" id="age" placeholder="Masukkan usia" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="height">Tinggi Badan (cm):</label></td>
+                        <td><input type="number" id="height" placeholder="Masukkan tinggi badan" required></td>
+                    </tr>
+                </table>
+
+                <div class="button-group">
+                    <button type="submit">Hitung BMI</button>
+                    <button type="button" id="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="result-section hidden" id="result">
+            <h1>Hasil</h1>
+            <p class="bmi-value" id="bmiValue"></p>
+            <p class="bmi-category" id="bmiCategory"></p>
+            <p class="info-text" id="bmiDescription"></p>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
